@@ -1,7 +1,2 @@
-*.log
-*.pot
-*.pvc
-__pycache__/
-local_setting.py
-db.sqlite3
-media
+# created by virtualenv automatically
+*
