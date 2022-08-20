@@ -14,4 +14,18 @@ from django.forms import ModelForm
 class ReviewForm(ModelForm):
     class Meta:
         model = Review
-        fields = ["first_name", "last_name", "stars"]
+        fields = "__all__"  # pass in all model fields as form fields
+        # fields = ["first_name", "last_name", "stars"]
+
+        labels = {
+            "first_name": "YOUR FIRST NAME",
+            "last_name": "Last Name",
+            "stars": "Rating",
+        }
+
+        error_messages = {
+            "stars": {
+                "min_value": "YO! Min value is 1",
+                "max_value": "YO! YO! max value is 5",
+            }
+        }

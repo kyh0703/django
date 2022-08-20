@@ -9,7 +9,9 @@
   <body>
     <h1>RENTAL_REVIEW</h1>
     <form action="" method="POST">
-      {% csrf_token %} {{form}}
+      {% csrf_token %} {% for field in form %}
+      <div class="mb-3">{{field.label_tag}}</div>
+      {{field}} {{field.errors}} {% endfor %}
       <input type="submit" />
     </form>
   </body>
