@@ -5,6 +5,20 @@
     <a href="/classroom/detail_teacher/{{teacher.id}}"
       >{{teacher.first_name}} {{teacher.last_name}}</a
     >
+    <ul>
+      <li>
+        <a href="/classroom/update_teacher/{{teacher.id}}"
+          >Update Infomation {{teacher.first_name}}</a
+        >
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="/classroom/delete_teacher/{{teacher.id}}"
+          >Delete Infomation {{teacher.first_name}}</a
+        >
+      </li>
+    </ul>
   </li>
   {% endfor %}
 </ul>

@@ -7,6 +7,8 @@ from django.views.generic import (
     CreateView,
     ListView,
     DetailView,
+    UpdateView,
+    DeleteView,
 )
 
 from classroom.models import Teacher
@@ -29,6 +31,16 @@ class TeacherCreateView(CreateView):
     success_url = reverse_lazy("classroom:thank_you")
 
 
+class TeacherUpdateView(UpdateView):
+    # SHARE model_form.html --- PK
+    model = Teacher
+    fields = "__all__"
+    success_url = reverse_lazy("classroom:list_teacher")
+
+class TeacherDeleteView(DeleteView):
+    model = Teacher
+    success_url = reverse_lazy('classroom:list_teacher')
+
 class TeacherListView(ListView):
     # model_list.html
     model = Teacher
@@ -41,6 +53,8 @@ class TeacherDetailView(DetailView):
     # model_detail.html
     model = Teacher
     # PK --> {{teacher}}
+
+
 
 
 class ContactFormView(FormView):
